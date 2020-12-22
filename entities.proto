@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package ping;
+option go_package = "github.com/napptive/grpc-ping-go;grpc_ping_go";
+
+// PingRequest defines a message sent by a client
+message PingRequest {
+  // RequestNumber with the number of the ping request
+  int32 request_number = 1;
+  // Data used if the client and the server needs to send any message
+  string data = 2;
+}
+
+// PingRequest defines a message sent by a server
+message PingResponse {
+  // RequestNumber with the number of the ping request
+  int32 request_number = 1;
+  // Data used if the client and the server needs to send any message
+  string data = 2;
+}
